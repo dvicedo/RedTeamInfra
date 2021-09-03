@@ -14,6 +14,7 @@ services:
       - "--entrypoints.web-ep.address=:80"
       - "--entrypoints.tls-ep.address=:443"
       - "--entrypoints.tcp-ep.address=:8888"
+      - "--entrypoints.gophish-ep.address=:3333"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=PathPrefix(`/dashboard`) || PathPrefix(`/api`)"
@@ -27,6 +28,7 @@ services:
       - "80:80"
       - "443:443"
       - "8888:8888"
+      - "3333:3333"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 

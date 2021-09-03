@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+
+  gophish:
+    image: "gophish/gophish"
+    container_name: "gophish"
+    labels:
+      - "traefik.enable=true"
+      # Web interface - host:3333 to gophish:3333
+      - "traefik.tcp.routers.gophishUi.rule=HostSNI(`*`)"
+      - "traefik.tcp.routers.gophishUi.service=gophishUi@docker"
+      - "traefik.tcp.services.gophishUi.loadbalancer.server.port=3333"
+      - "traefik.tcp.routers.gophish.entrypoints=gophish-ep"
+networks:
+  default:
+    external:
+      name: edgy-c2_default
