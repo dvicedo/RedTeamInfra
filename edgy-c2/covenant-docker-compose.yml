@@ -7,11 +7,11 @@ services:
     container_name: "covenant"
     labels:
       - "traefik.enable=true"
-      # Web interface - host:443 to covenant:7443
+      # Web interface - host:7443 to covenant:7443
       - "traefik.tcp.routers.covenantUi.rule=HostSNI(`*`)"
       - "traefik.tcp.routers.covenantUi.service=covenantUi@docker"
       - "traefik.tcp.services.covenantUi.loadbalancer.server.port=7443"
-      - "traefik.tcp.routers.covenantUi.entrypoints=tls-ep"
+      - "traefik.tcp.routers.covenantUi.entrypoints=covenant-ep"
       # HTTP Delivery - host/cov_delivery to covenant:80
       - "traefik.http.routers.covenantDelivery.rule=Host(`$C2EXTIP`) && PathPrefix(`/cov_delivery`)"
       - "traefik.http.routers.covenantDelivery.service=covenantDelivery@docker"
