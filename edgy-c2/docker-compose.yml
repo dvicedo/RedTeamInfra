@@ -61,5 +61,5 @@ services:
       # TCP Payload Handler host:8888 to msf:4445
       - "traefik.tcp.routers.msfHandlerTcp.rule=HostSNI(`*`)"
       - "traefik.tcp.routers.msfHandlerTcp.service=msfHandlerTcp@docker"
-      - "traefik.tcp.services.msfHandlerTcp.loadbalancer.server.port=4445"
       - "traefik.tcp.routers.msfHandlerTcp.entrypoints=tcp-ep"
+      - "traefik.tcp.services.msfHandlerTcp.loadbalancer.server.port=4445"

@@ -10,8 +10,8 @@ services:
       # Web interface - host:3333 to gophish:3333
       - "traefik.tcp.routers.gophishUi.rule=HostSNI(`*`)"
       - "traefik.tcp.routers.gophishUi.service=gophishUi@docker"
+      - "traefik.tcp.routers.gophishUi.entrypoints=gophish-ep"
       - "traefik.tcp.services.gophishUi.loadbalancer.server.port=3333"
-      - "traefik.tcp.routers.gophish.entrypoints=gophish-ep"
 networks:
   default:
     external:
