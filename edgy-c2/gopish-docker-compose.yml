@@ -5,6 +5,8 @@ services:
   gophish:
     image: "gophish/gophish"
     container_name: "gophish"
+    volumes:
+      - ${PWD}/gophishVolumes/config.json:/opt/gophish/config.json
     labels:
       - "traefik.enable=true"
       # Web interface - host:3333 to gophish:3333
