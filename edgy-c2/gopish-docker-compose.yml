@@ -7,6 +7,7 @@ services:
     container_name: "gophish"
     volumes:
       - ${PWD}/gophishVolumes/config.json:/opt/gophish/config.json
+      - ${PWD}/gophishVolumes/gophish.db:/opt/gophish/gophish.db
     labels:
       - "traefik.enable=true"
       # Web interface - host:3333 to gophish:3333
