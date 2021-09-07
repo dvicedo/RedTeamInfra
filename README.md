@@ -1,25 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** dvicedo, RedTeamInfra, twitter_handle, email, Infraestructura Red Team, Red Teaming infraestructure for tiendanube.
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -43,12 +21,6 @@
     <br />
     <a href="https://github.com/dvicedo/RedTeamInfra"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/dvicedo/RedTeamInfra">View Demo</a>
-    ·
-    <a href="https://github.com/dvicedo/RedTeamInfra/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/dvicedo/RedTeamInfra/issues">Request Feature</a>
   </p>
 </p>
 
@@ -85,18 +57,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`dvicedo`, `RedTeamInfra`, `twitter_handle`, `email`, `Infraestructura Red Team`, `Red Teaming infraestructure for tiendanube.`
-
+This project was created for easy implementation of Red Teaming infraestructure for tiendanube.
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [Traefik]()
+* [GoPhish]()
+* [Covenant]()
 
 
 
@@ -107,11 +74,16 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+It's necessary to have docker-compose and docker enviroment previously installed. 
+* docker
   ```sh
-  npm install npm@latest -g
+  docker --version
   ```
+* docker-compose
+  ```sh
+  docker-compose --version
+  ```
+
 
 ### Installation
 
@@ -119,10 +91,20 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/dvicedo/RedTeamInfra.git
    ```
-2. Install NPM packages
+2. Go to edgy-c2 folder and run following command to build the covenant image:
    ```sh
-   npm install
+   ./buildCovenant.sh
    ```
+3. Edit .env file setting with your local IP, example:
+   ```sh
+   C2EXTIP=192.168.1.4
+   ```
+4. Run following command to start the new infraestructure:
+   ```sh
+   ./start.sh
+   ```
+
+
 
 
 
@@ -142,43 +124,11 @@ See the [open issues](https://github.com/dvicedo/RedTeamInfra/issues) for a list
 
 
 
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/dvicedo/RedTeamInfra](https://github.com/dvicedo/RedTeamInfra)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
 
 
 
