@@ -40,7 +40,7 @@ services:
     volumes:
         - ./sleep.sh:/sleep.sh
         - ./double_delivery.rc:/usr/src/metasploit-framework/double_delivery.rc
-    command: /sleep.sh
+    command: tail -f /dev/null 
     labels:
       - "traefik.enable=true"
       # HTTP Payload Delivery - host/delivery_http to msf:8080
