@@ -5,6 +5,8 @@ services:
   covenant:
     image: "covenant"
     container_name: "covenant"
+    volumes:
+      - ${PWD}/covenantData:/app/Data
     labels:
       - "traefik.enable=true"
       # Web interface - host:7443 to covenant:7443
