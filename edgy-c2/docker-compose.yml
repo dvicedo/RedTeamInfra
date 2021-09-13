@@ -16,6 +16,7 @@ services:
       - "--entrypoints.tcp-ep.address=:8888"
       - "--entrypoints.gophish-ep.address=:3333"
       - "--entrypoints.covenant-ep.address=:7443"
+      - "--entrypoints.merlin-ep.address=:4444"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=PathPrefix(`/dashboard`) || PathPrefix(`/api`)"
@@ -31,6 +32,7 @@ services:
       - "8888:8888"
       - "3333:3333"
       - "7443:7443"
+      - "4444:4444"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 

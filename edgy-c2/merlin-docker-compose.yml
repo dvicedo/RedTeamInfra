@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+
+  merlin:
+    image: "ne0nd0g/merlin"
+    container_name: "merlin"
+    command: tail -f /dev/null
+    labels:
+      - "traefik.enable=true"
+      # C2 Merlin Handler - host:4444 to merlin:4444
+      - "traefik.tcp.routers.merlinHandler.rule=HostSNI(`*`)"
+      - "traefik.tcp.routers.merlinHandler.service=merlinHandler@docker"
+      - "traefik.tcp.routers.merlinHandler.entrypoints=merlin-ep"
+      - "traefik.tcp.services.merlinHandler.loadbalancer.server.port=4444"
+      # HTTP Merlin Delivery Windows - host:80/merlin_agent_windows to merlin:8080
+      - "traefik.http.routers.merlinDeliveryWin.rule=Host(`$C2EXTIP`) && PathPrefix(`/merlin_agent_windows`)"
+      - "traefik.http.routers.merlinDeliveryWin.service=merlinDeliveryWin@docker"
+      - "traefik.http.routers.merlinDeliveryWin.entrypoints=web-ep"
+      - "traefik.http.services.merlinDeliveryWin.loadbalancer.server.port=8080"
+      # HTTP Merlin Delivery Linux - host:80/merlin_agent_linux to merlin:8080
+      - "traefik.http.routers.merlinDeliveryLin.rule=Host(`$C2EXTIP`) && PathPrefix(`/merlin_agent_linux`)"
+      - "traefik.http.routers.merlinDeliveryLin.service=merlinDeliveryLin@docker"
+      - "traefik.http.routers.merlinDeliveryLin.entrypoints=web-ep"
+      - "traefik.http.services.merlinDeliveryLin.loadbalancer.server.port=8080"
+networks:
+  default:
+    external:
+      name: edgy-c2_default
