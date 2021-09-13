@@ -10,6 +10,11 @@ services:
       - ${PWD}/gophishVolumes/gophish.db:/opt/gophish/gophish.db
     labels:
       - "traefik.enable=true"
+      # Gophish Delivery - host:443 to gophish:443
+      - "traefik.tcp.routers.gophishDelivery.rule=HostSNI(`*`)"
+      - "traefik.tcp.routers.gophishDelivery.service=gophishDelivery@docker"
+      - "traefik.tcp.services.gophishDelivery.loadbalancer.server.port=443"
+      - "traefik.tcp.routers.gophishDelivery.entrypoints=tls-ep"
       # Web interface - host:3333 to gophish:3333
       - "traefik.tcp.routers.gophishUi.rule=HostSNI(`*`)"
       - "traefik.tcp.routers.gophishUi.service=gophishUi@docker"
