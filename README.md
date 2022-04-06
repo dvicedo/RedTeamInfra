@@ -8,7 +8,7 @@
   <h3 align="center">Infraestructura Red Team</h3>
 
   <p align="center">
-    Red Teaming infraestructure for tiendanube.
+    Red Teaming infraestructure.
     <br />
     <a href="https://github.com/dvicedo/RedTeamInfra"><strong>Explore the docs »</strong></a>
     <br />
@@ -46,7 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project was created for easy implementation of Red Teaming infraestructure for tiendanube.
+This project was created for easy implementation of Red Teaming infraestructure.
 
 ### Built With
 
