@@ -90,8 +90,8 @@ It's necessary to have docker-compose and docker enviroment previously installed
    C2EXTIP=192.168.1.4
    ```
 4. Please modify line 26 in docker-compose.yml file with your user and password hash.
-   ```
- - "traefik.http.middlewares.auth.basicauth.users
+   ```sh
+   traefik.http.middlewares.auth.basicauth.users
    ```
 5. Please ensure that file "gophish.db" inside gophishVolumes directory have write permission to everyone:
 
