@@ -32,7 +32,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#diagram">Installation</a></li>
+        <li><a href="#diagram">Diagram</a></li>
       </ul>
     </li>
   </ol>
