@@ -32,8 +32,8 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#diagram">Diagram</a></li>
       </ul>
+      <a href="#diagram">Diagram</a>
     </li>
   </ol>
 </details>
