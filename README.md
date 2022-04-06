@@ -89,12 +89,17 @@ It's necessary to have docker-compose and docker enviroment previously installed
    ```sh
    C2EXTIP=192.168.1.4
    ```
-3. Please ensure that file "gophish.db" inside gophishVolumes directory have write permission to everyone:
+4. Please modify line 26 in docker-compose.yml file with your user and password hash.
+   ```
+ - "traefik.http.middlewares.auth.basicauth.users
+   ```
+5. Please ensure that file "gophish.db" inside gophishVolumes directory have write permission to everyone:
 
-4. Run following command to start the new infraestructure:
+6. Run following command to start the new infraestructure:
    ```sh
    ./start.sh
    ```
+   
 ### Diagram
 ![alt text](https://github.com/dvicedo/RedTeamInfra/blob/main/RedTeamInfra.png)
 
